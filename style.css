@@ -5,8 +5,10 @@
 }
 body{
     font-family: monospace;
-    background-color: #353535;
-    color: #10c510;
+    background-color: black;
+    color: black;
+    overflow: hidden;
+    transition: background-color 2s;
 }
 .big-container{
     width: 100%;
@@ -18,16 +20,47 @@ body{
 #asci-container {
     max-width: 50em;
     word-break: break-all;
-    padding: 3em;
-    letter-spacing: 3.3px;
     overflow: hidden;
-    max-height: 300px;
+    max-height: 40vh;
+    z-index: 10;
 }
 .title{
-    letter-spacing: 10px;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1em;
     position: absolute;
     right: 50%;
     transform: translateX(50%);
+    z-index: 3;
+    
 }
+h1{
+   font-size: 5vw; 
+}
+#circle {
+    border-radius: 50%;
+    background-color: #ffffff;
+    width: 25vw;
+    height: 25vw;
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    transition: opacity 2s;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+
+.after-found{
+    background-color: white;
+    color: black;
+}
+.opacity-0{
+    opacity: 0;
+}
+
