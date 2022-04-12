@@ -1,7 +1,6 @@
 import {chars} from './chars.js';
 
 window.addEventListener("load",()=>{
-    document.getElementById("asci-container").style.fontSize = "calc(100vw / 60) "
     var asciString = ""
         for (var i = 0; i<500; i++) {
             for (var j = 0; j < chars.length; j++){
@@ -15,7 +14,7 @@ window.addEventListener("load",()=>{
             toPut = getRandom(2);
         }  
         asciString = asciString.concat(toPut);
-        document.getElementById("asci-container").style.color = "#10c5" + getRandom(9) + getRandom(9); 
+        document.getElementById("asci-container").style.color = "#10c500"; 
         document.getElementById("asci-container").innerHTML = asciString;
     },75)
 })
