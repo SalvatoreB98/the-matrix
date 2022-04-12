@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+}
+body{
+    font-family: monospace;
+    background-color: #353535;
+    color: #10c510;
+}
+.big-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#asci-container {
+    max-width: 50em;
+    word-break: break-all;
+    padding: 3em;
+    letter-spacing: 3.3px;
+    overflow: hidden;
+    max-height: 300px;
+}
+.title{
+    letter-spacing: 10px;
+    text-align: center;
+    margin-top: 2em;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+}
