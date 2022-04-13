@@ -1,22 +1,27 @@
 import {chars} from './chars.js';
 
 window.addEventListener("load",()=>{
+    var asciHTMLelement = document.getElementById("asci-container")
+    var img = document.getElementById('my-image');
+    var canvas = document.createElement('canvas');
+    canvas.width = img.width;
+    canvas.height = img.height;
+    canvas.getContext('2d').drawImage(img, 0, 0, img.width, img.height);
+    var myCanvas = canvas.getContext('2d');
     var asciString = ""
-        for (var i = 0; i<500; i++) {
-            for (var j = 0; j < chars.length; j++){
-                asciString = asciString.concat(chars[j]);
+        for (var i = 0; i<img.width; i++) {
+            asciString = asciString.concat("<br>")
+            for (var j = 0; j < img.height; j++){
+                var pixelData = myCanvas.getImageData(j,i,1,1).data;
+                if (pixelData[0]<100 && pixelData[1]<100 && pixelData[2]<100) {
+                    asciString = asciString.concat("0")
+                } else {
+                    asciString = asciString.concat("1")
+                }
+               
+                asciHTMLelement.innerHTML = asciString;
             }
         }
-    setInterval(()=>{
-        let toPut = asciString[0];
-        asciString = asciString.slice(1);
-        if(getRandom(5) == getRandom(5)){
-            toPut = getRandom(2);
-        }  
-        asciString = asciString.concat(toPut);
-        document.getElementById("asci-container").style.color = "#10c500"; 
-        document.getElementById("asci-container").innerHTML = asciString;
-    },75)
 })
 
 function getRandom(max) {
