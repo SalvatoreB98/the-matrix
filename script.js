@@ -14,9 +14,9 @@ window.addEventListener("load",()=>{
             for (var j = 0; j < img.height; j++){
                 var pixelData = myCanvas.getImageData(j,i,1,1).data;
                 if (pixelData[0]<100 && pixelData[1]<100 && pixelData[2]<100) {
-                    asciString = asciString.concat("0")
-                } else {
                     asciString = asciString.concat("1")
+                } else {
+                    asciString = asciString.concat("0")
                 }
                
                 asciHTMLelement.innerHTML = asciString;
